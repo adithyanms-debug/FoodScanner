@@ -105,6 +105,7 @@ export const ScanPage = () => {
         }
     }, [isScanning, navigate, addScanToHistory, lookupBarcode]);
 
+    // @ts-ignore: used for side-effect initialization
     const _startQuagga = useCallback(() => {
         if (mode !== 'camera' || !isScanning) return;
 

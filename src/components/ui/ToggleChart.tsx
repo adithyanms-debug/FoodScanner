@@ -73,7 +73,7 @@ export const ToggleChart = ({ nutrition }: ToggleChartProps) => {
                                 paddingAngle={5}
                                 dataKey="value"
                             >
-                                {data.map((entry, index) => (
+                                {data.map((_, index) => (
                                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                 ))}
                             </Pie>
@@ -93,7 +93,7 @@ export const ToggleChart = ({ nutrition }: ToggleChartProps) => {
                                 formatter={(value: any) => [`${Number(value).toFixed(1)}g`]}
                             />
                             <Bar dataKey="value" radius={[0, 8, 8, 0]} maxBarSize={30}>
-                                {data.map((entry, index) => (
+                                {data.map((_, index) => (
                                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                 ))}
                             </Bar>

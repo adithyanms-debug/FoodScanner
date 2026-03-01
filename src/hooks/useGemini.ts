@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 import { scanNutritionLabel } from '../lib/features/nutritionScanner';
 import { analyzeProductPhoto } from '../lib/features/photoAnalyzer';
@@ -23,7 +23,6 @@ const withRetry = async <T>(fn: () => Promise<T>, retries = 2): Promise<T> => {
 };
 
 export const useGemini = () => {
-    const queryClient = useQueryClient();
     const [isRateLimited, setIsRateLimited] = useState(false);
 
     const startRateLimit = () => {

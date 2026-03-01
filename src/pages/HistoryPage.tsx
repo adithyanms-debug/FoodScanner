@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { History as HistoryIcon, Search, Trash2, Clock } from 'lucide-react';
 import { useStore } from '../store/useStore';
 import { ClayCard } from '../components/ui/ClayCard';
-import { ValueScoreBadge } from '../components/ui/ValueScoreBadge';
 
 export const HistoryPage = () => {
     const { history, removeScan } = useStore();
@@ -60,8 +59,8 @@ export const HistoryPage = () => {
                         key={f}
                         onClick={() => setFilter(f)}
                         className={`whitespace-nowrap px-5 py-2 rounded-full text-sm font-semibold transition-all shadow-clay-button ${filter === f
-                                ? 'bg-accent text-white shadow-clay-button-active'
-                                : 'bg-background text-gray-600'
+                            ? 'bg-accent text-white shadow-clay-button-active'
+                            : 'bg-background text-gray-600'
                             }`}
                     >
                         {f}
@@ -112,7 +111,7 @@ export const HistoryPage = () => {
                                         <h4 className="font-bold text-gray-900 truncate">{item.productName}</h4>
                                         <p className="text-xs text-gray-500 truncate">{item.brand}</p>
                                         <span className={`inline-block mt-1 px-2 py-0.5 rounded-[6px] text-[10px] font-bold ${item.healthScore >= 70 ? 'bg-success/10 text-success' :
-                                                item.healthScore >= 40 ? 'bg-warning/10 text-warning' : 'bg-danger/10 text-danger'
+                                            item.healthScore >= 40 ? 'bg-warning/10 text-warning' : 'bg-danger/10 text-danger'
                                             }`}>
                                             Score: {item.healthScore}
                                         </span>

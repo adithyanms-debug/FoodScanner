@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send, Bot, User } from 'lucide-react';
-import { useStore } from '../../store/useStore';
+import { X, Send, Bot } from 'lucide-react';
+
 import { useGemini } from '../../hooks/useGemini';
 import { ScanResult, ChatMessage } from '../../types';
 import { cn } from '../../lib/utils';
-import { ClayCard } from './ClayCard';
+
 import { ClayButton } from './ClayButton';
 
 interface ChatDrawerProps {
