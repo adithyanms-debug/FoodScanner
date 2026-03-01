@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { useStore } from '../store/useStore';
-import { Trash2, AlertTriangle, Settings2, Sliders } from 'lucide-react';
+import { AlertTriangle, Settings2, Sliders } from 'lucide-react';
 import { ClayCard } from '../components/ui/ClayCard';
 import { ClayButton } from '../components/ui/ClayButton';
 import { cn } from '../lib/utils';
@@ -15,7 +14,7 @@ const COMMON_ALLERGIES = [
 const DIET_TYPES = ['Balanced', 'Low Carb', 'High Protein', 'Vegan'] as const;
 
 export const ProfilePage = () => {
-    const { profile, updateProfile, history, removeScan } = useStore();
+    const { profile, updateProfile } = useStore();
     const [localProfile, setLocalProfile] = useState<UserProfile>(profile);
 
     // Sync state if global changes

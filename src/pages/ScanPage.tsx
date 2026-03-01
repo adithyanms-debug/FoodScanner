@@ -105,7 +105,7 @@ export const ScanPage = () => {
         }
     }, [isScanning, navigate, addScanToHistory, lookupBarcode]);
 
-    const startQuagga = useCallback(() => {
+    const _startQuagga = useCallback(() => {
         if (mode !== 'camera' || !isScanning) return;
 
         Quagga.init({

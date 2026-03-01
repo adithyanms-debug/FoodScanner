@@ -13,7 +13,6 @@ import { AllergyBadge } from '../components/ui/AllergyBadge';
 import { ToggleChart } from '../components/ui/ToggleChart';
 import { ChatDrawer } from '../components/ui/ChatDrawer';
 import { ChatButton } from '../components/ui/ChatButton';
-import { LoadingClay } from '../components/ui/LoadingClay';
 
 export const ProductPage = () => {
     const { id } = useParams<{ id: string }>();
