@@ -12,9 +12,14 @@ RUN npm ci
 # Copy the rest of the source code
 COPY . .
 
-# Accept the API key as a build arg so it gets baked into the static bundle
+# Accept the API key as a build arg so it gets baked into the static bundle.
+# On Render, set VITE_GEMINI_API_KEY in the Environment tab and Render
+# will automatically pass environment variables as Docker build args.
 ARG VITE_GEMINI_API_KEY
-ENV VITE_GEMINI_API_KEY=$VITE_GEMINI_API_KEY
+# Write .env file from the build arg so Vite picks it up during the build
+RUN if [ -n "$VITE_GEMINI_API_KEY" ]; then \
+      echo "VITE_GEMINI_API_KEY=$VITE_GEMINI_API_KEY" > .env; \
+    fi
 
 # Build the production bundle
 RUN npm run build
